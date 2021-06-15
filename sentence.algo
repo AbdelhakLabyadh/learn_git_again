@@ -1,0 +1,25 @@
+ALGORITHM sentence_manipulation
+VAR
+    sentence : STRING;
+    nb_vowels : INTEGER :=0
+    nb_words : INTEGER :=0
+    i : INTEGER 
+BEGIN
+    i := 0;
+    Read(sentence)
+    WHILE (sentence[i] != '.') DO        
+        IF ((sentence[i] in ['a','i','o','u','e'])) THEN
+            nb_vowels := nb_vowels + 1
+            i := i + 1
+        ELSE_IF (sentence[i] == ' ') THEN
+            nb_words := nb_words + 1
+            i := i + 1
+        ELSE
+            i := i + 1
+        END_IF
+    END_WHILE
+    nb_words := nb_words + 1
+    Write(i) // length of the sentence 
+    Write(nb_words) // number of words
+    Write(nb_vowels) // number of vowels
+END
